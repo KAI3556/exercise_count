@@ -2,11 +2,11 @@ import { useState, useEffect, useRef } from 'react'
 import styles from './WorkoutScreen.module.css'
 
 const EXERCISES = [
-    { id: 1, name: 'Overhead Tricep', emoji: '🙆', duration: 28, color: '#2d6a4f' },
-    { id: 2, name: 'Bicep Curl',      emoji: '💪', duration: 30, color: '#1d3557' },
-    { id: 3, name: 'Shoulder Press',  emoji: '🏋️', duration: 25, color: '#6d2b3d' },
-    { id: 4, name: 'Squat Hold',      emoji: '🧎', duration: 40, color: '#4a3728' },
-    { id: 5, name: 'Plank',           emoji: '🤸', duration: 45, color: '#1b4332' },
+    { id: 1, name: 'Overhead Tricep', duration: 28, color: '#2d6a4f' },
+    { id: 2, name: 'Bicep Curl', duration: 30, color: '#1d3557' },
+    { id: 3, name: 'Shoulder Press', duration: 25, color: '#6d2b3d' },
+    { id: 4, name: 'Squat Hold', duration: 40, color: '#4a3728' },
+    { id: 5, name: 'Plank', duration: 45, color: '#1b4332' },
 ]
 
 export default function WorkoutScreen() {
@@ -64,7 +64,7 @@ export default function WorkoutScreen() {
                     <circle
                         cx="130" cy="130" r={R}
                         fill="none"
-                        stroke="#0099FF"
+                        stroke="#FF9900"
                         strokeWidth="10"
                         strokeDasharray={CIRC}
                         strokeDashoffset={dashOffset}

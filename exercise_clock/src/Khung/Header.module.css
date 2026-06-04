@@ -19,9 +19,10 @@
 .screen {
     position: absolute;
     inset: 6px;
-    border-radius: 38px;
+    /*border-radius: 38px;*/
     overflow: hidden;
     background: white;
+    width: 35%;
 }
 
 .statusBar {
