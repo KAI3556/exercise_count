@@ -1,12 +1,13 @@
 import { useState, useEffect, useRef } from 'react'
 import styles from './WorkoutScreen.module.css'
+import img1 from '../images/over-head.webp'
 
 const EXERCISES = [
-    { id: 1, name: 'Overhead Tricep', duration: 28, color: '#2d6a4f' },
-    { id: 2, name: 'Bicep Curl', duration: 30, color: '#1d3557' },
-    { id: 3, name: 'Shoulder Press', duration: 25, color: '#6d2b3d' },
-    { id: 4, name: 'Squat Hold', duration: 40, color: '#4a3728' },
-    { id: 5, name: 'Plank', duration: 45, color: '#1b4332' },
+    { id: 1, name: 'Overhead Tricep',img: img1, duration: 28, color: '#2d6a4f' },
+    { id: 2, name: 'Bicep Curl', img:null, duration: 30, color: '#1d3557' },
+    { id: 3, name: 'Shoulder Press',img:null, duration: 25, color: '#6d2b3d' },
+    { id: 4, name: 'Squat Hold',img:null, duration: 40, color: '#4a3728' },
+    { id: 5, name: 'Plank',img:null, duration: 45, color: '#1b4332' },
 ]
 
 export default function WorkoutScreen() {
@@ -74,7 +75,7 @@ export default function WorkoutScreen() {
                     />
                     <circle cx="130" cy="130" r="100" fill={exercise.color}/>
                 </svg>
-                <div className={styles.circleEmoji}>{exercise.emoji}</div>
+                <img src={exercise.img} className={styles.circleEmoji} alt={exercise.name} />
 
                 <button
                     className={styles.resetFloatBtn}
