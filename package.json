@@ -1,13 +1,13 @@
 {
-  "name": "exercise_clock",
+  "name": "exercise_count",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "exercise_clock/node_modules/.bin/vite",
-    "build": "exercise_clock/node_modules/.bin/vite build",
-    "lint": "exercise_clock/node_modules/.bin/eslint .",
-    "preview": "exercise_clock/node_modules/.bin/vite preview"
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
   },
   "dependencies": {
     "react": "^19.2.6",
