@@ -38,57 +38,6 @@
     color: #1c1c1e;
 }
 
-
-.circleWrap {
-    position: relative;
-    width: 260px;
-    height: 260px;
-    margin: 8px 0 28px;
-    flex-shrink: 0;
-}
-
-.circleEmoji {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 202px;
-    height: 202px;
-    object-fit: cover;
-    border-radius: 50%;
-    user-select: none;
-    pointer-events: none;
-}
-
-.resetFloatBtn {
-    position: absolute;
-    bottom: -1px;
-    color: gray;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    border: 1px solid #e0e0e0;
-    background: #fff;
-    font-size: 16px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-    transition: transform 0.15s, background 0.15s;
-}
-
-.resetFloatBtn:hover {
-    background: #f5f5f5;
-    transform: translateX(-50%) rotate(180deg);
-}
-
-.resetFloatBtn:active {
-    transform: translateX(-50%) scale(0.9);
-}
-
 .exerciseName {
     display: flex;
     align-items: center;
@@ -365,6 +314,56 @@
     margin-top: -8px;
     margin-bottom: 4px;
     font-weight: 500;
+}
+
+.circleWrap {
+    position: relative;
+    width: 260px;
+    height: 260px;
+    margin: 8px 0 28px;
+    flex-shrink: 0;
+}
+
+.circleEmoji {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 202px;
+    height: 202px;
+    object-fit: cover;
+    border-radius: 50%;
+    user-select: none;
+    pointer-events: none;
+}
+
+.resetFloatBtn {
+    position: absolute;
+    bottom: -1px;
+    color: gray;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid #e0e0e0;
+    background: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    transition: transform 0.15s, background 0.15s;
+}
+
+.resetFloatBtn:hover {
+    background: #f5f5f5;
+    transform: translateX(-50%) rotate(180deg);
+}
+
+.resetFloatBtn:active {
+    transform: translateX(-50%) scale(0.9);
 }
 
 .upNextCard {
