@@ -1,10 +1,10 @@
 import { useState, useEffect, useRef } from "react";
 import styles from "./workout-screen.module.css";
 import {EXERCISES} from "./exercises.js";
-import { CircleTimer }   from '../components/circle-timer.jsx'
-import { Controls }      from '../components/controls.jsx'
-import { ExerciseInfo }  from '../components/exercise-info.jsx'
-import { OptionsSheet }  from '../components/options-sheet.jsx'
+import { CircleTimer }   from '../components/Circle_timer/circle-timer.jsx'
+import { Controls }      from '../components/Control/controls.jsx'
+import { ExerciseInfo }  from '../components/Info/exercise-info.jsx'
+import { OptionsSheet }  from '../components/option/options-sheet.jsx'
 
 export const WorkoutScreen = (
     {

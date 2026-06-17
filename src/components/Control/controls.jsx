@@ -1,4 +1,4 @@
-import styles from "../workout/workout-screen.module.css";
+import styles from './controls.module.css'
 
 export const Controls = ({ playing, onPlayPause, onPrev, onNext, hasNext }) => {
     return (

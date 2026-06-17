@@ -1,4 +1,4 @@
-import styles from "../workout/workout-screen.module.css";
+import styles from './options-sheet.module.css'
 
 const DELAY_OPTIONS = [0, 5, 10, 15, 20, 25, 30]
 

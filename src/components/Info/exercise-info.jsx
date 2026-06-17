@@ -1,4 +1,4 @@
-import styles from "../workout/workout-screen.module.css";
+import styles from './exercise-info.module.css'
 
 export const ExerciseInfo = ({ exercise, onClose }) => {
     return (

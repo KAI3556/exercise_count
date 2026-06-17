@@ -1,4 +1,4 @@
-import styles from "./circle-timer.css";
+import styles from './circle-timer.module.css'
 
 export const CircleTimer = ({ exercise, progress, showUpNext, nextExercise, onReset }) => {
     const R         = 110;
