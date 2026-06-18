@@ -79,7 +79,7 @@ export const WorkoutScreen = (
                                     nextExercise.activate()
                                 }
                             }
-                        }, 2000)
+                        }, 3000)
 
                         return 0
                     }

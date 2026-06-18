@@ -6,6 +6,7 @@
     background: #ffffff;
     font-family: -apple-system, 'SF Pro Display', sans-serif;
     overflow: hidden;
+    position: relative;
     gap: 6px;
 }
 
