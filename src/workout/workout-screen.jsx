@@ -27,7 +27,7 @@ export const WorkoutScreen = (
     const [delayLeft, setDelayLeft] = useState(0);
 
     const [showInfo, setShowInfo] = useState(false);
-    const [showUpNext, setShowUpNext] = useState(false);
+    // const [showUpNext, setShowUpNext] = useState(false);
     const hasAutoAdvanced = useRef(false);
 
     const exercise = EXERCISES[index];
@@ -38,13 +38,14 @@ export const WorkoutScreen = (
             hasAutoAdvanced.current = false
             intervalRef.current = setInterval(() => {
                 setTimeLeft(t => {
-                    if (t === 7 && index < EXERCISES.length - 1) {
-                        setShowUpNext(true)
-                    }
+                    // if (t === 7 && index < nextExercise) {
+                    //     setShowUpNext(true)
+                    // }
 
                     if (t <= 1) {
                         clearInterval(intervalRef.current)
-                        setShowUpNext(false)
+                        setTimeLeft(0);
+                        // setShowUpNext(false)
 
                         if (soundOn) {
                             const ctx = new AudioContext()
@@ -55,34 +56,31 @@ export const WorkoutScreen = (
                             osc.stop(ctx.currentTime + 0.3)
                         }
 
-                        if (delay > 0) {
-                            setIsDelaying(true)
-                            setDelayLeft(delay)
-                            let countdown = delay
-                            const delayInterval = setInterval(() => {
-                                countdown -= 1
-                                setDelayLeft(countdown)
-                                if (countdown <= 0) {
-                                    clearInterval(delayInterval)
-                                    setIsDelaying(false)
-                                    setDelayLeft(0)
-                                    setPlaying(false)
-                                    setShowUpNext(false)
-
-                                    nextExercise.activate();
-                                    // setIndex(i => Math.min(i + 1, EXERCISES.length - 1))
+                        setTimeout(() => {
+                            if (delay > 0) {
+                                setIsDelaying(true)
+                                setDelayLeft(delay)
+                                let countdown = delay
+                                const delayInterval = setInterval(() => {
+                                    countdown -= 1
+                                    setDelayLeft(countdown)
+                                    if (countdown <= 0) {
+                                        clearInterval(delayInterval)
+                                        setIsDelaying(false)
+                                        setDelayLeft(0)
+                                        setPlaying(false)
+                                        nextExercise.activate()
+                                    }
+                                }, 1000)
+                            } else {
+                                setPlaying(false)
+                                if (!hasAutoAdvanced.current) {
+                                    hasAutoAdvanced.current = true
+                                    nextExercise.activate()
                                 }
-                            }, 1000)
-                        } else {
-                            setShowUpNext(false)
-                            setPlaying(false)
-                            if (!hasAutoAdvanced.current) {
-                                hasAutoAdvanced.current = true;
-
-                                nextExercise.activate();
-                                // setIndex(i => Math.min(i + 1, EXERCISES.length - 1))
                             }
-                        }
+                        }, 2000)
+
                         return 0
                     }
                     return t - 1
@@ -92,12 +90,12 @@ export const WorkoutScreen = (
             clearInterval(intervalRef.current)
         }
         return () => clearInterval(intervalRef.current)
-    }, [playing, soundOn, delay, index]);
+    }, [playing, soundOn, delay, index])
 
     const handleReset = () => {
         setPlaying(false)
         setTimeLeft(exercise.duration)
-        setShowUpNext(false)
+        // setShowUpNext(false)
         setIsDelaying(false)
         setDelayLeft(0)
     }
@@ -115,12 +113,11 @@ export const WorkoutScreen = (
                 <CircleTimer
                     exercise={exercise}
                     progress={progress}
-                    showUpNext={showUpNext}
-                    nextExercise={nextExercise}
+                    // showUpNext={showUpNext}
+                    // nextExercise={nextExercise}
                     onReset={handleReset}
                 />
 
-                {/*<UpNext/>*/}
             </div>
             <div className={styles.exerciseName}>
                 <span>{exercise.name}</span>
@@ -167,7 +164,7 @@ export const WorkoutScreen = (
                 />
             )}
 
-            {showUpNext && nextExercise && (
+            {(timeLeft <= 6 && timeLeft >= 3) && nextExercise && (
                 <UpNextCard nextExercise={nextExercise} />
             )}
         </div>
