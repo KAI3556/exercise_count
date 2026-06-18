@@ -1,5 +1,5 @@
 import styles from './circle-timer.module.css'
-import { UpNextCard } from './resetFloatBtn/up-next-card.jsx'
+import { UpNextCard } from '../resetFloatBtn/up-next-card.jsx'
 
 export const CircleTimer = ({ exercise, progress, showUpNext, nextExercise, onReset }) => {
     const R          = 110
@@ -24,10 +24,6 @@ export const CircleTimer = ({ exercise, progress, showUpNext, nextExercise, onRe
                 ? <img src={exercise.img} className={styles.circleEmoji} alt={exercise.name} />
                 : <div></div>
             }
-
-            {showUpNext && nextExercise && (
-                <UpNextCard nextExercise={nextExercise} />
-            )}
 
             <button className={styles.resetFloatBtn} onClick={onReset} title="Reset">⇄</button>
         </div>

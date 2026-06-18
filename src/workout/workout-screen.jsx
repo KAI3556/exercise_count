@@ -5,6 +5,7 @@ import { CircleTimer }   from '../components/Circle_timer/circle-timer.jsx'
 import { Controls }      from '../components/Control/controls.jsx'
 import { ExerciseInfo }  from '../components/Info/exercise-info.jsx'
 import { OptionsSheet }  from '../components/option/options-sheet.jsx'
+import {UpNextCard} from "../components/resetFloatBtn/up-next-card.jsx";
 
 export const WorkoutScreen = (
     {
@@ -164,6 +165,10 @@ export const WorkoutScreen = (
                     onSetDelay={setDelay}
                     onClose={() => setShowOptions(false)}
                 />
+            )}
+
+            {showUpNext && nextExercise && (
+                <UpNextCard nextExercise={nextExercise} />
             )}
         </div>
     )
